@@ -1,9 +1,0 @@
-{
-  "/admin/(protected)/dashboard/page": "app/admin/(protected)/dashboard/page.js",
-  "/admin/(protected)/orders/[id]/page": "app/admin/(protected)/orders/[id]/page.js",
-  "/admin/login/page": "app/admin/login/page.js",
-  "/api/order/[id]/route": "app/api/order/[id]/route.js",
-  "/api/order/route": "app/api/order/route.js",
-  "/order-tracking/[id]/page": "app/order-tracking/[id]/page.js",
-  "/order-tracking/page": "app/order-tracking/page.js"
-}

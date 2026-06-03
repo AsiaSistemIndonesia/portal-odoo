@@ -5,3 +5,6 @@ node_modules
 /lib/generated/prisma
 
 /app/generated/prisma
+
+.env
+.next
