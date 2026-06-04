@@ -6,11 +6,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  experimental: {
-    outputFileTracingIncludes: {
-      "/**": ["./prisma/generated/prisma/*.node"],
-    },
-  },
+  // experimental: {
+  //   outputFileTracingIncludes: {
+  //     "/**": ["./prisma/generated/prisma/*.node"],
+  //   },
+  // },
 };
 
 export default nextConfig;
