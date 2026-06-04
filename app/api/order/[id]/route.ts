@@ -1,4 +1,5 @@
-import { PrismaClient } from "@/prisma/generated/prisma/client";
+// import { PrismaClient } from "@/prisma/generated/prisma/client";
+import { PrismaClient } from "@prisma/client";
 import { OrderStatus } from "@/types/order";
 import { NextResponse } from "next/server";
 
@@ -6,7 +7,7 @@ const prisma = new PrismaClient();
 
 export async function GET(
   req: Request,
-  context: { params: Promise<{ id: string }> }
+  context: { params: Promise<{ id: string }> },
 ) {
   try {
     const { id } = await context.params;
@@ -15,7 +16,7 @@ export async function GET(
     if (isNaN(orderId)) {
       return NextResponse.json(
         { success: false, message: "ID tidak valid" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -26,7 +27,7 @@ export async function GET(
     if (!order) {
       return NextResponse.json(
         { success: false, message: "Order tidak ditemukan" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -38,14 +39,14 @@ export async function GET(
     console.error(error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
 
 export async function PATCH(
   req: Request,
-  context: { params: Promise<{ id: string }> }
+  context: { params: Promise<{ id: string }> },
 ) {
   try {
     const { id } = await context.params;
@@ -54,7 +55,7 @@ export async function PATCH(
     if (isNaN(orderId)) {
       return NextResponse.json(
         { success: false, message: "ID tidak valid" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -72,7 +73,7 @@ export async function PATCH(
     if (!status || !allowedStatus.includes(status)) {
       return NextResponse.json(
         { success: false, message: "Status tidak valid" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -84,7 +85,7 @@ export async function PATCH(
     if (!existingOrder) {
       return NextResponse.json(
         { success: false, message: "Order tidak ditemukan" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -105,7 +106,7 @@ export async function PATCH(
     console.error(error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

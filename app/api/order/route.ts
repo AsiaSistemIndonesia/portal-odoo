@@ -1,5 +1,6 @@
-import { PrismaClient } from "@/prisma/generated/prisma/client";
+// import { PrismaClient } from "@/prisma/generated/prisma/client";
 import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -65,7 +66,7 @@ export async function GET(req: Request) {
     console.error("GET /orders error:", error);
     return NextResponse.json(
       { success: false, message: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
